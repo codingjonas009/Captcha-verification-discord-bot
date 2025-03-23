@@ -8,7 +8,7 @@
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/discord-captcha-bot)
 [![License](https://img.shields.io/badge/license-Custom-orange.svg)](LICENSE)
-[![Discord Server](https://img.shields.io/badge/Discord-Support%20Server-7289da.svg)](https://discord.gg/your-invite-link)
+
 
 </div>
 
