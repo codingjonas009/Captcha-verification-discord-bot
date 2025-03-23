@@ -5,8 +5,8 @@
 
 **A powerful, customizable solution to protect your Discord server from bots and raids**
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/discord-captcha-bot)
-[![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/codingjonas009/discord-captcha-bot)
+[![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENCE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![Discord.py](https://img.shields.io/badge/discord.py-2.0%2B-blue)](https://discordpy.readthedocs.io/en/stable/)
 </div>
@@ -104,9 +104,9 @@ The bot configuration is stored in `verify_config.json`:
 - **Database Tracking**: Monitors verification attempts and suspicious patterns
 
 ## 🔗 Links
-- [Documentation Wiki](https://github.com/yourusername/discord-captcha-bot/wiki)
+- [Documentation Wiki](https://github.com/codingjonas009/discord-captcha-bot/wiki)
 - Contact: Discord username `jonas.redstone` (DMs open)
-- [Report Bugs](https://github.com/yourusername/discord-captcha-bot/issues)
+- [Report Bugs](https://github.com/codingjonas009/discord-captcha-bot/issues)
 
 ## 🛠️ Advanced Customization
 ### Custom CAPTCHA Generation
@@ -131,7 +131,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 5. Open a Pull Request
 
 ## ⭐ Star History
-[![Star History Chart](https://via.placeholder.com/800x300)](https://star-history.com/yourusername/discord-captcha-bot)
+[![Star History Chart](https://via.placeholder.com/800x300)](https://star-history.com/codingjonas009/discord-captcha-bot)
 
 ---
 <div align="center">
