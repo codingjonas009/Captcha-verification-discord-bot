@@ -5,27 +5,25 @@
 
 **A powerful, customizable solution to protect your Discord server from bots and raids**
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/codingjonas009/discord-captcha-bot)
-[![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENCE)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/discord-captcha-bot)
+[![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![Discord.py](https://img.shields.io/badge/discord.py-2.0%2B-blue)](https://discordpy.readthedocs.io/en/stable/)
 </div>
 
 ## 🛡️ Features
-- **Visual CAPTCHA Verification**: Sophisticated image-based CAPTCHAs with distortion effects
-- **Role Integration**: Automatically assigns customizable roles upon successful verification
-- **Timeout Protection**: Implements configurable timeout periods for failed verification attempts
+- **Visual CAPTCHA Verification**: Image-based CAPTCHAs with random characters and distortion effects
+- **Role Integration**: Automatically assigns verified role upon successful verification
+- **Timeout Protection**: Configurable timeout periods for failed verification attempts
 - **Customizable Settings**: Adjust CAPTCHA complexity, appearance, and verification parameters
-- **Persistent Verification**: Database-driven system that maintains verification status across user sessions
-- **Interactive UI**: Clean, modern interface with custom embeds and interactive buttons
-- **Server-specific Verification**: Manages verification on a per-server basis
-- **Admin Controls**: Comprehensive commands for server administrators
+- **Persistent Verification**: Database-driven system that maintains verification status
+- **Interactive UI**: Modern interface with custom embeds and interactive buttons
 
 ## 📋 Requirements
 - Python 3.8 or higher
 - discord.py 2.0 or higher
-- Pillow (PIL) for image generation
-- SQLite3 for database management
+- Pillow (PIL)
+- SQLite3
 
 ## ⚙️ Installation
 1. **Clone the repository**
@@ -41,9 +39,8 @@
 
 3. **Configure the bot**
    - Create a new application in the [Discord Developer Portal](https://discord.com/developers/applications)
-   - Enable necessary intents (Server Members, Message Content)
    - Create a bot user and copy your token
-   - Add the token to your bot configuration
+   - Add the token to your bot's main file
 
 4. **Start the bot**
    ```bash
@@ -96,42 +93,18 @@ The bot configuration is stored in `verify_config.json`:
 5. If incorrect, user can retry (up to configured maximum)
 6. After too many failures, a timeout period is enforced
 
-## 🔒 Security Features
-- **Progressive Difficulty**: CAPTCHA difficulty increases with failed attempts
-- **Timeout Mechanism**: Prevents brute-force attacks
-- **Image Distortion**: Multiple distortion techniques make automation difficult
-- **Ephemeral Messages**: Private verification that only the user can see
-- **Database Tracking**: Monitors verification attempts and suspicious patterns
-
 ## 🔗 Links
-- [Documentation Wiki](https://github.com/codingjonas009/discord-captcha-bot/wiki)
 - Contact: Discord username `jonas.redstone` (DMs open)
-- [Report Bugs](https://github.com/codingjonas009/discord-captcha-bot/issues)
-
-## 🛠️ Advanced Customization
-### Custom CAPTCHA Generation
-The bot includes a sophisticated CAPTCHA generation system:
-- Character rotation for increased difficulty
-- Random noise and line generation
-- Gaussian blur effects
-- Custom fonts support
-
-### Custom Fonts
-To use a custom font:
-1. Place your TTF font file in the bot's directory
-2. Update the `font_path` in the configuration file
+- [Report Bugs](https://github.com/yourusername/discord-captcha-bot/issues)
 
 ## 🤝 Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
 5. Open a Pull Request
-
-## ⭐ Star History
-[![Star History Chart](https://via.placeholder.com/800x300)](https://star-history.com/codingjonas009/discord-captcha-bot)
 
 ---
 <div align="center">
