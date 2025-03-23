@@ -2,7 +2,7 @@
 
 <div align="center">
   
-![Bot Logo](https://via.placeholder.com/150)
+![Bot Logo]([https://via.placeholder.com/150](https://cdn.discordapp.com/attachments/1351096159510204456/1353292755966889984/Verify_Bot.png?ex=67e11f97&is=67dfce17&hm=be5e77f3cff1f4acccaa93d71be99bcec8eb23a60cf5d1828f30e79ec649846c&))
 
 **A powerful, customizable solution to protect your Discord server from bots and raids**
 
