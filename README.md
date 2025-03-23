@@ -82,10 +82,6 @@ The bot configuration is stored in `verify_config.json`:
 | Command | Description |
 |---------|-------------|
 | `!setup_verification` | Creates a verification system in the current channel |
-| `!set_verified_role <role_id>` | Sets the role to be assigned after verification |
-| `!captcha_settings` | Displays current CAPTCHA configuration |
-| `!verification_stats` | Shows verification statistics for the server |
-| `!reset_verification <@user>` | Resets verification status for a specific user |
 
 ## 🖼️ Preview
 <div align="center">
