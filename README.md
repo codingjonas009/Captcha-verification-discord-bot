@@ -100,9 +100,9 @@ Access your verification statistics through the web dashboard:
 
 ## 🔗 Links
 
-- [Documentation](https://github.com/yourusername/discord-captcha-bot/wiki)
-- [Support Server](https://discord.gg/your-invite-link)
-- [Report Bugs](https://github.com/yourusername/discord-captcha-bot/issues)
+- [Documentation](https://github.com/codingjonas009/discord-captcha-bot/wiki)
+- Discord username jonas.redstone(DM's open))
+- [Report Bugs](https://github.com/codingjonas009/discord-captcha-bot/issues)
 
 ## 🔒 Security
 
