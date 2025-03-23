@@ -5,7 +5,7 @@
 
 **A powerful, customizable solution to protect your Discord server from bots and raids**
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/discord-captcha-bot)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/codingjonas009/Captcha-verification-discord-bot)
 [![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![Discord.py](https://img.shields.io/badge/discord.py-2.0%2B-blue)](https://discordpy.readthedocs.io/en/stable/)
@@ -28,7 +28,7 @@
 ## ⚙️ Installation
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/discord-captcha-bot.git
+   git clone https://github.com/codingjonas009/Captcha-verification-discord-bot.git
    cd discord-captcha-bot
    ```
 
@@ -95,7 +95,7 @@ The bot configuration is stored in `verify_config.json`:
 
 ## 🔗 Links
 - Contact: Discord username `jonas.redstone` (DMs open)
-- [Report Bugs](https://github.com/yourusername/discord-captcha-bot/issues)
+- [Report Bugs](https://github.com/codingjonas009/Captcha-verification-discord-bot/issues)
 
 ## 🤝 Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
