@@ -82,7 +82,7 @@ The bot configuration is stored in `verify_config.json`:
 
 ## 🖼️ Preview
 <div align="center">
-  <img src="https://via.placeholder.com/800x400" alt="Bot Preview" width="80%">
+  <img src="assets/Preview.png" alt="Bot Preview" width="80%">
 </div>
 
 ## 📊 Verification System Flow
