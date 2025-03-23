@@ -1,37 +1,33 @@
 # Discord Captcha Bot
-
 <div align="center">
   
-![Bot Logo]([https://via.placeholder.com/150](https://cdn.discordapp.com/attachments/1351096159510204456/1353292755966889984/Verify_Bot.png?ex=67e11f97&is=67dfce17&hm=be5e77f3cff1f4acccaa93d71be99bcec8eb23a60cf5d1828f30e79ec649846c&))
+![Bot Logo](https://cdn.discordapp.com/attachments/1351096159510204456/1353292755966889984/Verify_Bot.png?ex=67e11f97&is=67dfce17&hm=be5e77f3cff1f4acccaa93d71be99bcec8eb23a60cf5d1828f30e79ec649846c&)
 
 **A powerful, customizable solution to protect your Discord server from bots and raids**
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/discord-captcha-bot)
-[![License](https://img.shields.io/badge/license-Custom-orange.svg)](LICENSE)
-
-
+[![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![Discord.py](https://img.shields.io/badge/discord.py-2.0%2B-blue)](https://discordpy.readthedocs.io/en/stable/)
 </div>
 
 ## 🛡️ Features
-
-- **Advanced CAPTCHA Systems**: Image-based, math problems, and text verification methods
-- **Customizable Security Levels**: Adjust strictness based on your server's needs
-- **Raid Protection**: Automatic detection of suspicious join patterns
-- **Member Verification**: Ensures only real users gain access to your server
-- **Role Integration**: Automatically assign roles to verified members
-- **Logging System**: Detailed logs of verification attempts and outcomes
-- **Multi-language Support**: CAPTCHA challenges in multiple languages
-- **User-friendly Setup**: Simple configuration for server administrators
+- **Visual CAPTCHA Verification**: Sophisticated image-based CAPTCHAs with distortion effects
+- **Role Integration**: Automatically assigns customizable roles upon successful verification
+- **Timeout Protection**: Implements configurable timeout periods for failed verification attempts
+- **Customizable Settings**: Adjust CAPTCHA complexity, appearance, and verification parameters
+- **Persistent Verification**: Database-driven system that maintains verification status across user sessions
+- **Interactive UI**: Clean, modern interface with custom embeds and interactive buttons
+- **Server-specific Verification**: Manages verification on a per-server basis
+- **Admin Controls**: Comprehensive commands for server administrators
 
 ## 📋 Requirements
-
-- Node.js v16.0.0 or higher
-- Discord.js v14.0.0 or higher
-- A Discord Bot Token
-- MongoDB (for storing verification data)
+- Python 3.8 or higher
+- discord.py 2.0 or higher
+- Pillow (PIL) for image generation
+- SQLite3 for database management
 
 ## ⚙️ Installation
-
 1. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/discord-captcha-bot.git
@@ -40,83 +36,96 @@
 
 2. **Install dependencies**
    ```bash
-   npm install
+   pip install discord.py pillow
    ```
 
 3. **Configure the bot**
-   ```bash
-   cp config.example.json config.json
-   # Edit config.json with your bot token and preferences
-   ```
+   - Create a new application in the [Discord Developer Portal](https://discord.com/developers/applications)
+   - Enable necessary intents (Server Members, Message Content)
+   - Create a bot user and copy your token
+   - Add the token to your bot configuration
 
 4. **Start the bot**
    ```bash
-   npm start
+   python bot.py
    ```
 
 ## 🔧 Configuration
-
-Open `config.json` and customize the following settings:
+The bot configuration is stored in `verify_config.json`:
 
 ```json
 {
-  "token": "YOUR_DISCORD_BOT_TOKEN",
-  "prefix": "!",
-  "mongoURI": "YOUR_MONGODB_CONNECTION_STRING",
-  "captchaSettings": {
-    "type": "image", // Options: "image", "math", "text"
-    "difficulty": "medium", // Options: "easy", "medium", "hard"
-    "timeout": 300 // Time in seconds for users to complete CAPTCHA
+  "verified_role_id": 1342506397526655046,
+  "captcha_settings": {
+    "length": 6,
+    "width": 280,
+    "height": 90,
+    "font_size": 40,
+    "font_path": "arial.ttf"
   },
-  "verifiedRole": "ROLE_ID_TO_ASSIGN",
-  "logChannel": "CHANNEL_ID_FOR_LOGS"
+  "verification_settings": {
+    "max_attempts": 5,
+    "timeout_minutes": 10,
+    "db_filename": "captcha_verification.db"
+  },
+  "messages": {
+    "welcome": "Welcome to the server. Please complete the captcha verification process to gain access.",
+    "already_verified": "Your account has already been verified on this server.",
+    "verification_success": "Verification completed successfully. You now have full access to the server.",
+    "verification_failed": "The captcha entry was incorrect. Please attempt verification again.",
+    "verification_timeout": "Maximum verification attempts exceeded. Please try again after the timeout period."
+  }
 }
 ```
 
 ## 📚 Commands
-
 | Command | Description |
 |---------|-------------|
-| `!captcha setup` | Initial setup wizard for the verification system |
-| `!captcha test` | Test the CAPTCHA system |
-| `!captcha stats` | View verification statistics |
-| `!captcha settings` | Modify CAPTCHA settings |
-| `!captcha reset <@user>` | Reset verification for a specific user |
-| `!captcha toggle` | Enable or disable the verification system |
+| `!setup_verification` | Creates a verification system in the current channel |
+| `!set_verified_role <role_id>` | Sets the role to be assigned after verification |
+| `!captcha_settings` | Displays current CAPTCHA configuration |
+| `!verification_stats` | Shows verification statistics for the server |
+| `!reset_verification <@user>` | Resets verification status for a specific user |
 
 ## 🖼️ Preview
-
 <div align="center">
   <img src="https://via.placeholder.com/800x400" alt="Bot Preview" width="80%">
 </div>
 
-## 📊 Statistics Dashboard
+## 📊 Verification System Flow
+1. User clicks the "Verify" button on the verification message
+2. Bot sends a CAPTCHA image in an ephemeral (private) message
+3. User enters the CAPTCHA text in the modal dialog
+4. If correct, user receives the verified role and gains access
+5. If incorrect, user can retry (up to configured maximum)
+6. After too many failures, a timeout period is enforced
 
-Access your verification statistics through the web dashboard:
-- Verification success rate
-- Average completion time
-- Failed verification attempts
-- Raid detection events
+## 🔒 Security Features
+- **Progressive Difficulty**: CAPTCHA difficulty increases with failed attempts
+- **Timeout Mechanism**: Prevents brute-force attacks
+- **Image Distortion**: Multiple distortion techniques make automation difficult
+- **Ephemeral Messages**: Private verification that only the user can see
+- **Database Tracking**: Monitors verification attempts and suspicious patterns
 
 ## 🔗 Links
+- [Documentation Wiki](https://github.com/yourusername/discord-captcha-bot/wiki)
+- Contact: Discord username `jonas.redstone` (DMs open)
+- [Report Bugs](https://github.com/yourusername/discord-captcha-bot/issues)
 
-- [Documentation](https://github.com/codingjonas009/discord-captcha-bot/wiki)
-- Discord username jonas.redstone(DM's open))
-- [Report Bugs](https://github.com/codingjonas009/discord-captcha-bot/issues)
+## 🛠️ Advanced Customization
+### Custom CAPTCHA Generation
+The bot includes a sophisticated CAPTCHA generation system:
+- Character rotation for increased difficulty
+- Random noise and line generation
+- Gaussian blur effects
+- Custom fonts support
 
-## 🔒 Security
-
-This bot implements several security measures:
-- Rate limiting to prevent brute force attempts
-- IP logging for suspicious activity detection
-- Regular security updates
-
-## 📝 License
-
-This project is licensed under a custom license - see the [LICENSE](LICENSE) file for details.
+### Custom Fonts
+To use a custom font:
+1. Place your TTF font file in the bot's directory
+2. Update the `font_path` in the configuration file
 
 ## 🤝 Contributing
-
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 1. Fork the repository
@@ -126,13 +135,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 5. Open a Pull Request
 
 ## ⭐ Star History
-
-[![Star History Chart](https://via.placeholder.com/800x300)](https://star-history.com/codingjonas009/discord-captcha-bot)
+[![Star History Chart](https://via.placeholder.com/800x300)](https://star-history.com/yourusername/discord-captcha-bot)
 
 ---
-
 <div align="center">
   
 Made with ❤️ by Jonas
-
 </div>
