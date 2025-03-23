@@ -127,7 +127,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## ⭐ Star History
 
-[![Star History Chart](https://via.placeholder.com/800x300)](https://star-history.com/#yourusername/discord-captcha-bot)
+[![Star History Chart](https://via.placeholder.com/800x300)](https://star-history.com/codingjonas009/discord-captcha-bot)
 
 ---
 
